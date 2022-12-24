@@ -204,7 +204,7 @@ mfrc522.PCD_StopCrypto1();
 if(value!=""){
 
   String DBaddT = DBnm + "/" + T; //--> Creating a Database path
-     if(Firebase.setString(firebaseData,DBaddT,TimeNow)){ //--> Command or code for sending Temperature data in the form of a String data type to the Firebase Realtime Database.
+     if(Firebase.setString(firebaseData,DBaddT,TimeNow)){
            delay(1000);
      } 
 else {        
@@ -213,7 +213,7 @@ else {
 
 
 String DBaddH = DBnm + "/" + HD; //--> Creating a Database path
-    if(Firebase.setString(firebaseData,DBaddH,value)){ //--> Command or code for sending Humidity data in the form of a String data type to the Firebase Realtime Database.
+    if(Firebase.setString(firebaseData,DBaddH,value)){ 
            Serial.println("Value Uploaded Successfully");
            delay(1000);
      }
@@ -224,7 +224,7 @@ else {
  if(value=="KA-02-E-6854")
  {
     String DBaddT = DBnm + "/" + TD; //--> Creating a Database path
-     if(Firebase.setString(firebaseData,DBaddT,F)){ //--> Command or code for sending Temperature data in the form of a String data type to the Firebase Realtime Database.
+     if(Firebase.setString(firebaseData,DBaddT,F)){ 
 
            
      }
@@ -236,7 +236,7 @@ else {
  else
         {
           String DBaddT = DBnm + "/" + TD; //--> Creating a Database path
-          if(Firebase.setString(firebaseData,DBaddT,R)){ //--> Command or code for sending Temperature data in the form of a String data type to the Firebase Realtime Database.
+          if(Firebase.setString(firebaseData,DBaddT,R)){ 
            delay(1000);
      }
            else {        
@@ -244,8 +244,7 @@ else {
       }
         }
          DBaddT = DBnm + "/" + "Location"; //--> Creating a Database path
-     if(Firebase.setString(firebaseData,DBaddT,loc)){ //--> Command or code for sending Temperature data in the form of a String data type to the Firebase Realtime Database.
-           delay(1000);
+     if(Firebase.setString(firebaseData,DBaddT,loc)){ 
      } 
 else {        
     Serial.println(firebaseData.errorReason());
